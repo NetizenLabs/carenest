@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Weekly Care Planner & Daily Care Notes — CareNest</title>
+<meta name="description" content="The free Weekly Care Planner + Daily Care Notes every family caregiver needs. Plan the week once, track the day in two minutes — appointments, medications, meals, mood and patterns in one calm, printable system.">
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<meta property="og:title" content="Free Weekly Care Planner & Daily Care Notes — CareNest">
+<meta property="og:description" content="Plan the whole care week on one page, and spot daily patterns in two minutes. Free printable PDF.">
+<meta property="og:image" content="/assets/preview-planner-p1.jpg">
+<meta property="og:type" content="website">
+<meta name="p:domain_verify" content="c854b52dc2c350460dd60f9b0e5af908"/>
+<!-- GA4: paste your measurement tag here once the GA4 property exists -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7EAD0; --sage:#7E9C85; --forest:#33523F; --clay:#D9835F;
+    --sand:#E9DCC0; --paper:#FFFDF8; --grey:#5A5A54;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--forest);line-height:1.55}
+  h1,h2,h3{font-family:'Fraunces',serif;line-height:1.15;font-weight:600}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header.site{padding:18px 0}
+  header.site .wrap{display:flex;align-items:center;gap:12px}
+  header.site img{width:46px;height:46px;border-radius:50%}
+  header.site .brand{font-family:'Fraunces',serif;font-size:24px;font-weight:700}
+  header.site .brand span{color:var(--clay)}
+  header.site .tag{margin-left:auto;font-size:14px;color:var(--sage);font-weight:600}
+  header.site a.pin{margin-left:16px;background:var(--forest);color:#fff;text-decoration:none;padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600}
+  .hero{padding:34px 0 54px}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .eyebrow{display:inline-block;background:#fff;border:1px solid var(--sand);color:var(--clay);font-weight:700;font-size:12.5px;letter-spacing:.08em;padding:7px 14px;border-radius:999px;text-transform:uppercase}
+  .hero h1{font-size:clamp(34px,5vw,52px);margin:18px 0 14px}
+  .hero p.lede{font-size:18px;color:var(--grey);max-width:52ch}
+  form.capture{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+  form.capture input[type=email]{flex:1 1 260px;padding:15px 18px;border:2px solid var(--sand);border-radius:14px;font-size:16px;background:#fff;color:var(--forest)}
+  form.capture input[type=email]:focus{outline:none;border-color:var(--sage)}
+  form.capture button{background:var(--clay);color:#fff;border:none;padding:15px 26px;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer}
+  form.capture button:hover{filter:brightness(1.05)}
+  .micro{margin-top:12px;font-size:13.5px;color:var(--sage);font-weight:500}
+  .form-msg{margin-top:14px;font-size:15px;font-weight:600;display:none}
+  .form-msg.ok{display:block;color:var(--forest)}
+  .form-msg a{color:var(--clay)}
+  .preview{position:relative}
+  .preview .card{background:var(--paper);border:1px solid var(--sand);border-radius:20px;padding:14px;box-shadow:0 18px 40px rgba(51,82,63,.14);transform:rotate(1.2deg)}
+  .preview img{width:100%;display:block;border-radius:10px}
+  .preview .badge{position:absolute;top:16px;right:24px;z-index:3;background:var(--clay);color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;box-shadow:0 8px 20px rgba(217,131,95,.4)}
+  section{padding:46px 0}
+  section h2{font-size:clamp(26px,3.4vw,36px);text-align:center;margin-bottom:8px}
+  section .sub{text-align:center;color:var(--grey);max-width:60ch;margin:0 auto 30px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card2{background:var(--paper);border:1px solid var(--sand);border-radius:18px;padding:24px}
+  .card2 img{width:100%;border-radius:8px;border:1px solid var(--sand);margin-bottom:16px}
+  .card2 h3{font-size:21px;margin-bottom:10px}
+  ul.checks{list-style:none}
+  ul.checks li{padding:7px 0 7px 34px;position:relative;font-size:15.5px}
+  ul.checks li::before{content:"✓";position:absolute;left:0;top:5px;width:22px;height:22px;border:2px solid var(--clay);border-radius:6px;color:var(--clay);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{background:var(--paper);border:1px solid var(--sand);border-radius:18px;padding:24px;text-align:center}
+  .step .n{width:44px;height:44px;margin:0 auto 12px;background:var(--sage);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:20px;font-weight:700}
+  .step h3{font-size:19px;margin-bottom:6px}
+  .step p{font-size:14.5px;color:var(--grey)}
+  .binder{background:var(--forest);border-radius:24px;padding:40px;color:#fff}
+  .binder h2{color:#fff;text-align:left}
+  .binder p{color:#DCE8DC;max-width:58ch}
+  .binder .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}
+  .binder ul.checks li{color:#fff}
+  .binder ul.checks li::before{border-color:var(--clay);color:var(--clay)}
+  .binder .wait{background:var(--paper);border-radius:16px;padding:22px;color:var(--forest)}
+  .binder .wait h3{font-size:19px;margin-bottom:6px}
+  .binder .wait p{color:var(--grey);font-size:14.5px}
+  .binder .wait a{display:inline-block;margin-top:14px;background:var(--clay);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px}
+  .faq{max-width:760px;margin:0 auto}
+  .faq details{background:var(--paper);border:1px solid var(--sand);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+  .faq summary{font-weight:600;cursor:pointer;font-size:16px}
+  .faq p{margin-top:8px;color:var(--grey);font-size:15px}
+  footer.site{padding:34px 0 44px;border-top:1px solid var(--sand);margin-top:10px}
+  footer.site .wrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  footer.site img{width:36px;height:36px;border-radius:50%}
+  footer.site .fine{width:100%;font-size:13px;color:var(--sage);margin-top:8px}
+  footer.site a{color:var(--forest)}
+  @media (max-width:840px){
+    .hero .wrap,.grid2,.steps,.binder .cols{grid-template-columns:1fr}
+    header.site .tag{display:none}
+    .preview{max-width:440px;margin:0 auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="/assets/logo.png" alt="CareNest logo">
+    <div class="brand">Care<span>Nest</span></div>
+    <div class="tag">Care, organized.</div>
+    <a class="pin" href="https://www.pinterest.com/carenestbinder/" target="_blank" rel="noopener">Follow on Pinterest</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Free printable for family caregivers</span>
+      <h1>The Weekly Care Planner that gives you your evenings back.</h1>
+      <p class="lede">The whole week of care on one page — appointments, medication checks, meals and family updates, planned once on Sunday. Plus Daily Care Notes: the 2-minute log that spots patterns before they become problems.</p>
+      <form class="capture" id="capture-form">
+        <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Send me the free planner</button>
+      </form>
+      <p class="micro">Free 2-page PDF · US Letter · Print as many copies as you need · No spam, ever</p>
+      <p class="form-msg" id="form-msg">You're in. Your planner is ready: <a href="/downloads/CareNest-Weekly-Planner.pdf" download>Download the free PDF</a> — and a copy is on its way to your inbox.</p>
+    </div>
+    <div class="preview">
+      <div class="badge">2 PAGES · FREE</div>
+      <div class="card"><img src="/assets/preview-planner-p1.jpg" alt="Preview of the CareNest Weekly Care Planner"></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>What's inside</h2>
+    <p class="sub">Two pages that run the week. Page 1 plans it on Sunday. Page 2 takes two minutes a day.</p>
+    <div class="grid2">
+      <div class="card2">
+        <img src="/assets/preview-planner-p1.jpg" alt="Weekly Care Planner preview">
+        <h3>Page 1 — Weekly Care Planner</h3>
+        <ul class="checks">
+          <li>All 7 days: appointments &amp; visits at a glance</li>
+          <li>Medication checks, meals &amp; shopping in one grid</li>
+          <li>Calls &amp; family updates — nobody out of the loop</li>
+          <li>This week's top 3, and your protected time off</li>
+        </ul>
+      </div>
+      <div class="card2">
+        <img src="/assets/preview-planner-p2.jpg" alt="Daily Care Notes preview">
+        <h3>Page 2 — Daily Care Notes</h3>
+        <ul class="checks">
+          <li>Food &amp; fluids, sleep, mood and pain — daily</li>
+          <li>Medicines taken, ticked off in seconds</li>
+          <li>A notes column for anything unusual</li>
+          <li>A patterns section — gold at doctor appointments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Twenty minutes on Sunday. Two minutes a day after that.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Get the free PDF</h3><p>Enter your email above and download the 2-page planner instantly.</p></div>
+      <div class="step"><div class="n">2</div><h3>Plan on Sunday</h3><p>Twenty quiet minutes with the planner, and the week is decided.</p></div>
+      <div class="step"><div class="n">3</div><h3>Two minutes a day</h3><p>Tick off the Daily Care Notes each evening. Patterns appear by themselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="binder">
+      <div class="cols">
+        <div>
+          <h2>The full Caregiver Binder is coming</h2>
+          <p>These two free pages are the start of a complete system — seven sections that organise all of your parent's care, built for caregivers who are doing most of it alone.</p>
+          <ul class="checks" style="margin-top:16px">
+            <li>Weekly planner &amp; daily care notes (free, above)</li>
+            <li>Appointment log &amp; doctor-visit prep</li>
+            <li>Insurance &amp; documents organiser</li>
+            <li>Daily care notes &amp; contacts directory</li>
+            <li>A section for you — because you count too</li>
+          </ul>
+        </div>
+        <div class="wait">
+          <h3>Join the waitlist</h3>
+          <p>Binder buyers from the waitlist get the launch price. Everyone on the list also gets new free printables as they are released.</p>
+          <a href="#" onclick="document.querySelector('.hero').scrollIntoView({behavior:'smooth'});return false;">Get the free planner &amp; join</a><p style="margin-top:14px">Also free: the <a href="/emergency-care-sheet/" style="background:none;color:var(--clay);padding:0;margin:0">Emergency Care Sheet + Medication List</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions</h2>
+    <p class="sub">The honest answers.</p>
+    <div class="faq">
+      <details><summary>Is it really free?</summary><p>Yes. Both pages, no card, no trial. CareNest makes money later from the full Caregiver Binder — the free planner is how you decide whether our system fits your life before you spend anything.</p></details>
+      <details><summary>What size does it print?</summary><p>US Letter (8.5 × 11"). It also scales cleanly to A4 — choose "fit to page" in your print dialog.</p></details>
+      <details><summary>Is this medical advice?</summary><p>No. CareNest is an organising tool. It helps you keep information in one place and share it clearly — it never recommends treatments or medications. Always follow your own doctor's guidance.</p></details>
+      <details><summary>Who is CareNest for?</summary><p>Family caregivers — mostly daughters, sons and spouses — caring for an aging parent, often on their own. If you are the person everyone calls, this was made for you.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <img src="/assets/logo.png" alt="CareNest logo">
+    <strong>CareNest</strong>
+    <span style="color:var(--sage)">Care, organized.</span>
+    <span style="margin-left:auto"><a href="https://www.pinterest.com/carenestbinder/" target="_blank" rel="noopener">Pinterest @carenestbinder</a></span>
+    <p class="fine">© 2026 CareNest. An organising tool for family caregivers — not medical advice. In an emergency, always call your local emergency number first.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('capture-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var form = e.target, email = form.email.value.trim();
+  if (!email) return;
+  var msg = document.getElementById('form-msg');
+  msg.classList.add('ok');
+  form.querySelector('button').textContent = 'Check your inbox ✓';
+  // Email capture via FormSubmit AJAX (first real submission triggers a one-time
+  // activation email to the site owner; after that, signups arrive silently).
+  fetch('https://formsubmit.co/ajax/safyan223242@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      _subject: 'CareNest — new Weekly Planner signup',
+      source: 'carenest.abusufyan.xyz/weekly-care-planner',
+      page: location.href
+    })
+  }).catch(function () { /* download still works even if capture hiccups */ });
+});
+</script>
+</body>
+</html>
